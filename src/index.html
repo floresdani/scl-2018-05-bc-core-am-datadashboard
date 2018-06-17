@@ -1,12 +1,72 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Data Dashboard</title>
-    <link rel="stylesheet" href="style.css">
-  </head>
-  <body>
-    
-    <script src="main.js"></script>
-  </body>
+
+<head>
+  <meta charset="utf-8">
+  <title>Data Dashboard</title>
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+
+  <div class="container-fluid">
+    <div class="row">
+      <!--El Sidebar-->
+      <div class="col-lg-3 navbar-light bg-white sidebar sidebar-sticky">
+        <nav class="navbar navbar-expand-lg flex-lg-column">
+          <!--El logo grande de Laboratoria-->
+          <a class="navbar-brand py-3">
+            <img src="assets/img/logo.svg" id="logo" width="100%" alt="logolab">
+          </a>
+          <!--El logo pequeño responsive de Laboratoria-->
+          <a class="navbar-brand">
+            <img src="assets/img/isotipo.png" id="logoRes" width="25%" alt="logolab">
+          </a>
+          <!--Menú colapsado en pantallas pequeñas-->
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <!--Menú-->
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav flex-column text-center">
+              <a class="nav-item nav-link lead py-3">Valentina Schdmit</a>
+              <a class="nav-item nav-link lead">Admin</a>
+              <button class="buttons py-2 lead" id="dataDash">Dashboard</button>
+              <button class="buttons py-2 lead">Configuración</button>
+            </div>
+          </div>
+        </nav>
+      </div>
+      <!--Contenido HTML-->
+      <div class="col-lg-9" id="search">
+        <h3 class="heavy bg-warning text-start p-3">Data Dashboard</h3>
+        <!--Menú países-->
+        <select id="menupais">
+          <option value="Sede">Seleccione la sede</option>
+          <option value="Brasil" disabled>Brasil</option>
+          <option value="Chile" disabled>Chile</option>
+          <option value="Mexico" disabled>México</option>
+          <option value="Peru">Perú</option>
+        </select>
+        <!--Menú cohorts-->
+        <select id="menucohort">
+          <option value="example">Elegir grupo</option>
+          <option value="cohort1">lim-2018-03-pre-core-pw</option>
+        </select>
+        <!--Botón de select-->
+        <button class="goCohort">Continuar</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script src="assets/js/bootstrap.min.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+
 </html>
