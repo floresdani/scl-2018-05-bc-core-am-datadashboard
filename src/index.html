@@ -2,7 +2,9 @@
 <html>
 
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Data Dashboard</title>
   <link rel="stylesheet" href="assets/css/bootstrap.min.css">
   <link rel="stylesheet" href="assets/css/style.css">
@@ -13,15 +15,11 @@
   <div class="container-fluid">
     <div class="row">
       <!--El Sidebar-->
-      <div class="col-lg-3 navbar-light bg-white sidebar sidebar-sticky">
-        <nav class="navbar navbar-expand-lg flex-lg-column">
+      <div class="col-lg-3 navbar-light bg-white">
+        <nav class="navbar navbar-expand-lg flex-lg-column text-center">
           <!--El logo grande de Laboratoria-->
           <a class="navbar-brand py-3">
-            <img src="assets/img/logo.svg" id="logo" width="100%" alt="logolab">
-          </a>
-          <!--El logo pequeño responsive de Laboratoria-->
-          <a class="navbar-brand">
-            <img src="assets/img/isotipo.png" id="logoRes" width="25%" alt="logolab">
+            <img src="assets/img/logo.png" id="logo" width="100%" alt="logolab">
           </a>
           <!--Menú colapsado en pantallas pequeñas-->
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
@@ -30,7 +28,7 @@
           </button>
           <!--Menú-->
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav flex-column text-center">
+            <div class="navbar-nav flex-lg-column">
               <a class="nav-item nav-link lead py-3">Valentina Schdmit</a>
               <a class="nav-item nav-link lead">Admin</a>
               <button class="buttons py-2 lead" id="dataDash">Dashboard</button>
@@ -39,11 +37,11 @@
           </div>
         </nav>
       </div>
-      <!--Contenido HTML-->
+      <!--Primera página HTML con la primera búsqueda-->
       <div class="col-lg-9" id="search">
         <h3 class="heavy bg-warning text-start p-3">Data Dashboard</h3>
         <!--Menú países-->
-        <select id="menupais">
+        <select class="menu">
           <option value="Sede">Seleccione la sede</option>
           <option value="Brasil" disabled>Brasil</option>
           <option value="Chile" disabled>Chile</option>
@@ -51,16 +49,48 @@
           <option value="Peru">Perú</option>
         </select>
         <!--Menú cohorts-->
-        <select id="menucohort">
+        <select class="menu">
           <option value="example">Elegir grupo</option>
           <option value="cohort1">lim-2018-03-pre-core-pw</option>
         </select>
         <!--Botón de select-->
-        <button class="goCohort">Continuar</button>
+        <button id="goGeneral">Continuar</button>
+      </div>
+      <!--Segunda página HTML con los resultados generales-->
+      <div class="col-lg-9" id="generalResults">
+        <h3 class="heavy bg-warning text-start p-3">Data Dashboard</h3>
+        <!--Menú alumnas-->
+        <select class="menu">
+          <option value="Sede">Seleccione alumna</option>
+        </select>
+        <!--Menú orden-->
+        <select class="menu">
+          <option value="example">Elegir orden</option>
+          <option value="asc">Ascendente</option>
+          <option value="desc">Descendente</option>
+        </select>
+        <!--Cohort-->
+        <h4 class="pt-5 pl-4 heavy">Lim-2018-03-pre-core-pw</h4>
+        <!--Botones-->
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-lg-6">
+              <p>Cursos</p>
+            </div>
+            <div class="col-lg-6">
+              <p>Lecturas</p>
+            </div>
+            <div class="col-lg-6">
+              <p>Quizzes</p>
+            </div>
+            <div class="col-lg-6">
+              <p>Ejercicios</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
     crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
