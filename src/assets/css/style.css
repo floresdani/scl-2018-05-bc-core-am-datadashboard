@@ -22,8 +22,7 @@
 @media (max-width: 991px) {
 
   #logo {
-    width: 30%;
-    text-align: start;
+    display: none;
   }
 }
 
