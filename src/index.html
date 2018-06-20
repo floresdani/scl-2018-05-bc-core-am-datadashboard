@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Data Dashboard</title>
   <link rel="stylesheet" href="assets/css/bootstrap.min.css">
@@ -31,8 +31,8 @@
             <div class="navbar-nav flex-lg-column">
               <a class="nav-item nav-link lead py-3">Valentina Schdmit</a>
               <a class="nav-item nav-link lead">Admin</a>
-              <button class="buttons py-2 lead" id="dataDash">Dashboard</button>
-              <button class="buttons py-2 lead">Configuración</button>
+              <a class="nav-item nav-link lead" id="dataDash">Dashboard</a>
+              <a class="nav-item nav-link lead">Configuración</a>
             </div>
           </div>
         </nav>
@@ -60,9 +60,9 @@
       <div class="col-lg-9" id="generalResults">
         <h3 class="heavy bg-warning text-start p-3">Data Dashboard</h3>
         <!--Menú alumnas-->
-        <select class="menu">
-          <option value="Sede">Seleccione alumna</option>
-        </select>
+
+        <input type="text" id="studentSearch" onkeyup="name()" placeholder="Search for student.." title="Alumna">
+
         <!--Menú orden-->
         <select class="menu">
           <option value="example">Elegir orden</option>
@@ -70,23 +70,29 @@
           <option value="desc">Descendente</option>
         </select>
         <!--Cohort-->
-        <h4 class="pt-5 pl-4 heavy">Lim-2018-03-pre-core-pw</h4>
+
         <!--Botones-->
-        <div class="container-fluid">
-          <div class="row">
-            <div class="col-lg-6">
-              <p>Cursos</p>
-            </div>
-            <div class="col-lg-6">
-              <p>Lecturas</p>
-            </div>
-            <div class="col-lg-6">
-              <p>Quizzes</p>
-            </div>
-            <div class="col-lg-6">
-              <p>Ejercicios</p>
-            </div>
-          </div>
+        <div class="container-fluid" id="contenedor">
+          <h4 class="p-4 heavy">Lim-2018-03-pre-core-pw</h4>
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Nombre/email</th>
+                <th>Curso</th>
+                <th>Lecturas</th>
+                <th>Ejercicios</th>
+                <th>Quizzes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td id="name"></td>
+                <td id="course"></td>
+                <td id="lectures"></td>
+                <td id="excercises"></td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </div>
@@ -97,6 +103,7 @@
     crossorigin="anonymous"></script>
   <script src="assets/js/bootstrap.min.js"></script>
   <script src="assets/js/main.js"></script>
+  <script src="assets/js/data.js"></script>
 </body>
 
 </html>
