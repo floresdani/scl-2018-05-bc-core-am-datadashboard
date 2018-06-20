@@ -60,7 +60,7 @@
       <div class="col-lg-9" id="generalResults">
         <h3 class="heavy bg-warning text-start p-3">Data Dashboard</h3>
         <!--Menú alumnas-->
-        <input type="text" id="studentSearch" onkeyup="myFunction()" placeholder="Search for student.." title="Alumna">
+        <input type="text" id="studentSearch" onkeyup="searchStudent()" placeholder="Search for student.." title="Alumna">
 
         <!--Menú orden-->
         <select class="menu">
@@ -73,8 +73,8 @@
         <!--Aquí va contenedor de la data seleccionada-->
         <div class="container-fluid" id="contenedor">
           <div id="dataResult" class="row">
-            <!-- Aquí va tabla de datos -->
-            <table>
+        <!-- Aquí va tabla de datos -->
+            <table id="table">
               <tr>
               <th>Nombre</th>
               <th>Cursos</th>
