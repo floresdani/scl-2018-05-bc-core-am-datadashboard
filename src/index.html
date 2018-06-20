@@ -31,8 +31,8 @@
             <div class="navbar-nav flex-lg-column">
               <a class="nav-item nav-link lead py-3">Valentina Schdmit</a>
               <a class="nav-item nav-link lead">Admin</a>
-              <button class="buttons py-2 lead" id="dataDash">Dashboard</button>
-              <button class="buttons py-2 lead">Configuración</button>
+              <a class="nav-item nav-link lead" id="dataDash">Dashboard</a>
+              <a class="nav-item nav-link lead">Configuración</a>
             </div>
           </div>
         </nav>
@@ -60,7 +60,8 @@
       <div class="col-lg-9" id="generalResults">
         <h3 class="heavy bg-warning text-start p-3">Data Dashboard</h3>
         <!--Menú alumnas-->
-        <input type="text" id="studentSearch" onkeyup="myFunction()" placeholder="Search for student.." title="Alumna">
+
+        <input type="text" id="studentSearch" onkeyup="name()" placeholder="Search for student.." title="Alumna">
 
         <!--Menú orden-->
         <select class="menu">
@@ -84,6 +85,7 @@
     crossorigin="anonymous"></script>
   <script src="assets/js/bootstrap.min.js"></script>
   <script src="assets/js/main.js"></script>
+  <script src="assets/js/data.js"></script>
 </body>
 
 </html>

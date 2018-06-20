@@ -1,25 +1,30 @@
-
 window.onload = () => {
-  dataFull();
-  myFunction();
-};
-/*
-const btn = document.querySelector('input');
-const container = document.getElementById('dataResult');
-const usersJSON = '../data/cohorts/lim-2018-03-pre-core-pw/users.json';
-
-fetch(usersJSON)
-  .then(response => response.json())
-  .then(data => {
-    console.log(data);
-    renderUsers(data);
+  const btnDash = document.getElementById('dataDash');
+  btnDash.addEventListener('click', () => {
+    document.getElementById('search').style.display = 'block';
+    document.getElementById('generalResults').style.display = 'none';
   });
 
-const renderUsers = data => {
-  btn.addEventListener('click', () => { // si fuera objeto: for in (recorre objetos)
-    const render = data.forEach(element => {
-      // element.name === arreglo[i].name
-      return container.innerHTML += `<p>${element.name}</p>`
+  const generalInfo = document.getElementById('goGeneral');
+  generalInfo.addEventListener('click', () => {
+    document.getElementById('search').style.display = 'none';
+    document.getElementById('generalResults').style.display = 'block';
+  });
+};
+
+const btn = document.getElementById('goGeneral');
+const container = document.getElementById('nombres');
+
+const usersJSONS = '../data/cohorts/lim-2018-03-pre-core-pw/users.json';
+fetch(usersJSONS)
+  .then(response => response.json())
+  .then(data => {
+    renderUsers(data);
+  });
+const renderUsers = info => {
+  btn.addEventListener('click', () => {
+    const render = info.forEach(element => {
+      return contenedor.innerHTML += `<p>${element.name}</p>`;
     });
     return render;
   });
