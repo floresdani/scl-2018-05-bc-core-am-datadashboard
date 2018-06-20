@@ -47,3 +47,21 @@ p{
   border: 5px;
   border-color: black;
 }
+
+/*Tabla de datos*/
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #56F89A;
+  text-align: left;
+  padding: 8px;
+  text-align: center;
+}
+
+tr:nth-child(even) {
+  background-color: #56F89A;
+}
