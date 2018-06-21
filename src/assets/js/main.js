@@ -26,7 +26,7 @@ function nameUser() {
   let name = [];
 
   const btn = document.getElementById('generalData');
-  const container = document.getElementById('table');
+  const container = document.getElementById('nameBox');
 
   const usersJSONS = '../data/cohorts/lim-2018-03-pre-core-pw/users.json';
   fetch(usersJSONS)
@@ -37,7 +37,7 @@ function nameUser() {
   const renderUsers = info => {
     btn.addEventListener('click', () => {
       const render = info.forEach(element => {
-        return contenedor.innerHTML += `<p>${element.name}</p>`;
+        return container.innerHTML += `<div><td>${element.name.toUpperCase()}</td></div>`;
       });
       return render;
     });
@@ -46,10 +46,36 @@ function nameUser() {
 /*Aquí va la funcionalidad de buscar por alumna */
 
 function searchStudent() {
-  let user = [];
+  let user = [];//
 
-  const input = document.getElementById('studentSearch').value;
+  const input = document.getElementById('studentSearch');
   const users = '../data/cohorts/lim-2018-03-pre-core-pw/users.json';
+  
+  
+
+  input.addEventListener('keypress', (event) => {
+    let key = event.which || event.KeyCode;
+    if (key === 13) { //código 13 = enter
+      let nameUser = input.value;
+      console.log(userNames);
+      input.value = ''; //string vacío para limpiar input
+
+      fetch(users)
+        .then(response => response.json())
+        .then(data => {
+          console.log(data);
+          renderInfo(data);
+        })
+    }
+  })
+
+  //const renderInfo = (data) => {
+
+  //} 
+
+
+  /*
+
   fetch(users)
     .then(response => response.json())
     .then(info => {
@@ -69,7 +95,7 @@ function searchStudent() {
       return render;
     });
   };
-
+*/
 }
 
 

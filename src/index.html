@@ -53,10 +53,10 @@
           <option value="example">Elegir cohort</option>
           <option value="cohort1">lim-2018-03-pre-core-pw</option>
         </select>
-        <!--Botón de select-->
+        <!--Botón de select que muestra la data general-->
         <button id="generalData">Continuar</button>
       </div>
-      <!--Segunda página HTML con los resultados generales-->
+      <!--Aquí va el titulo Data dashboard que muestra los resultados generales-->
       <div class="col-lg-9" id="generalResults">
         <h3 class="heavy bg-warning text-start p-3">Data Dashboard</h3>
         <!--Menú alumnas-->
@@ -73,19 +73,47 @@
         <!--Aquí va contenedor de la data seleccionada-->
         <div class="container-fluid" id="contenedor">
           <div id="dataResult" class="row">
-        <!-- Aquí va tabla de datos -->
+            <!-- Aquí va tabla de datos -->
             <table id="table">
+              <tr id="titleData">
+                <th>Nombre</th>
+                <th>Cursos</th>
+                <th>%</th>
+                <th>Quizzes</th>
+                <th>%</th>
+                <th>Lecturas</th>
+                <th>%</th>
+                <th>Ejercicios</th>
+                <th>%</th>
+              </tr>
               <tr>
-              <th>Nombre</th>
-              <th>Cursos</th>
-              <th>%</th>
-              <th>Quizzes</th>
-              <th>%</th>
-              <th>Lecturas</th>
-              <th>%</th>
-              <th>Ejercicios</th>
-              <th>%</th>
-            </tr>
+                <td id="nameBox"></td>
+                </br>
+              </tr>
+              <tr>
+                <td id="courseBox"></td>
+              </tr>
+              <tr>
+                <td id="coursePercent"></td>
+              </tr>
+              <tr>
+                <td id="quizzesBox"></td>
+              </tr>
+              <tr>
+                <td id="quizzesPercent"></td>
+              </tr>
+              <tr>
+                <td id="readingBox"></td>
+              </tr>
+              <tr>
+                <td id="readingPercent"></td>
+              </tr>
+              <tr>
+                <td id="exercisesBox"></td>
+              </tr>
+              <tr>
+                <td id="exercisesPercent"></td>
+              </tr>
             </table>
           </div>
         </div>
