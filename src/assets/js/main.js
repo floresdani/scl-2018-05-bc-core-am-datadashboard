@@ -1,9 +1,12 @@
 window.onload = () => {
   resultsGeneral();
   infoGeneral();
-  nameUser();
+  users();
   searchStudent();
 };
+/*Definiendo variables null */
+let namesUsers = null;
+
 
 /*funcionalidad boton select */
 function resultsGeneral() {
@@ -22,36 +25,32 @@ function infoGeneral() {
   });
 }
 /*Aqui va la funcionalidad de listados de  nombres */
-function nameUser() {
-  let name = [];
-
+function users() {
   const btn = document.getElementById('generalData');
   const container = document.getElementById('nameBox');
-
   const usersJSONS = '../data/cohorts/lim-2018-03-pre-core-pw/users.json';
+
   fetch(usersJSONS)
     .then(response => response.json())
     .then(info => {
+      console.log(info);
+      namesUsers = info;
       renderUsers(info);
     });
   const renderUsers = info => {
     btn.addEventListener('click', () => {
-      const render = info.forEach(element => {
+      const namesUsers = info.forEach(element => {
         return container.innerHTML += `<div><td>${element.name.toUpperCase()}</td></div>`;
       });
-      return render;
+      return namesUsers;
     });
   };
 }
 /*Aquí va la funcionalidad de buscar por alumna */
 
 function searchStudent() {
-  let user = [];//
-
   const input = document.getElementById('studentSearch');
   const users = '../data/cohorts/lim-2018-03-pre-core-pw/users.json';
-  
-  
 
   input.addEventListener('keypress', (event) => {
     let key = event.which || event.KeyCode;
@@ -65,11 +64,13 @@ function searchStudent() {
         .then(data => {
           console.log(data);
           renderInfo(data);
-        })
-    }
-  })
+        });
+    };
+  });
 
   //const renderInfo = (data) => {
+
+
 
   //} 
 
