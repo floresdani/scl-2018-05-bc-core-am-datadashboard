@@ -2,11 +2,9 @@ window.onload = () => {
   resultsGeneral();
   infoGeneral();
   users();
-  searchStudent();
+  /*searchStudent();*/
+  progress();
 };
-/*Definiendo variables null */
-let namesUsers = null;
-
 
 /*funcionalidad boton select */
 function resultsGeneral() {
@@ -16,7 +14,8 @@ function resultsGeneral() {
     document.getElementById('generalResults').style.display = 'none';
   });
 }
-/* */
+
+/*funcionalidad boton continuar*/
 function infoGeneral() {
   const generalInfo = document.getElementById('generalData');
   generalInfo.addEventListener('click', () => {
@@ -24,31 +23,52 @@ function infoGeneral() {
     document.getElementById('generalResults').style.display = 'block';
   });
 }
-/*Aqui va la funcionalidad de listados de  nombres */
+
+/*Aqui va el listados de  nombres */
 function users() {
+
   const btn = document.getElementById('generalData');
   const container = document.getElementById('nameBox');
-  const usersJSONS = '../data/cohorts/lim-2018-03-pre-core-pw/users.json';
 
+  const usersJSONS = '../data/cohorts/lim-2018-03-pre-core-pw/users.json';
   fetch(usersJSONS)
     .then(response => response.json())
     .then(info => {
-      console.log(info);
-      namesUsers = info;
       renderUsers(info);
     });
   const renderUsers = info => {
     btn.addEventListener('click', () => {
-      const namesUsers = info.forEach(element => {
+      const render = info.forEach(element => {
         return container.innerHTML += `<div><td>${element.name.toUpperCase()}</td></div>`;
       });
-      return namesUsers;
+      return render;
     });
   };
 }
+
+/*Aquí va el listado de el progreso*/
+function progress() {
+  fetch('../data/cohorts/lim-2018-03-pre-core-pw/progress.json')
+    .then((datas) => {
+      if (datas.ok) {
+        return datas.json();
+      } else {
+        throw new Error('No se pudo procesar la información');
+      }
+    }).then((info) => {
+      console.log((info));
+    })
+    .catch((error) => {
+      console.error('Ha ocurrido un error: ' + error);
+    });
+};
+
+
 /*Aquí va la funcionalidad de buscar por alumna */
 
-function searchStudent() {
+/*function searchStudent() {
+  let user = [];
+
   const input = document.getElementById('studentSearch');
   const users = '../data/cohorts/lim-2018-03-pre-core-pw/users.json';
 
@@ -65,47 +85,6 @@ function searchStudent() {
           console.log(data);
           renderInfo(data);
         });
-    };
+    }
   });
-
-  //const renderInfo = (data) => {
-
-
-
-  //} 
-
-
-  /*
-
-  fetch(users)
-    .then(response => response.json())
-    .then(info => {
-      renderUsers(info);
-    });
-  const renderUsers = info => {
-    input.addEventListener('keypress', (event) => {
-      let key = event.which || event.keyCode;
-      if (key === 13) { //código 13 es enter
-        const render = info.forEach(element => {
-          if (input === element.name) {
-            return contenedor.innerHTML += `<p>${element.name}</p>`;
-          }
-
-        })
-      };
-      return render;
-    });
-  };
-*/
-}
-
-
-
-/*
-function demo() {
-  let result = "";
-  for (let i in progress) {
-    let
-  }
-}
-*/
+}*/

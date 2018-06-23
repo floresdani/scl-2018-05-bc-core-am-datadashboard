@@ -24,6 +24,14 @@
   #logo {
     display: none;
   }
+
+  .navbar-toggler{
+    background-color: #ffc107;
+  }
+
+  #navbarNavAltMarkup{
+    background-color: #ffc107;
+  }
 }
 
 #goGeneral{
@@ -43,11 +51,6 @@ h4{
   text-transform: uppercase;
 }
 
-p{
-  border: 5px;
-  border-color: black;
-}
-
 /*Tabla de datos*/
 table {
   font-family: arial, sans-serif;
@@ -64,8 +67,4 @@ td, th {
 
 #titleData {
   background-color: #56F89A;
-}
-
-br {
-  color: black;
 }
