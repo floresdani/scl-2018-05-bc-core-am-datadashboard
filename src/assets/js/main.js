@@ -2,7 +2,8 @@ window.onload = () => {
   resultsGeneral();
   infoGeneral();
   /*usersProgressCourses();*/
-  users(); 
+  users();
+  stats();
   /* searchStudent(); */
   /* progress(); */
 };
@@ -31,8 +32,7 @@ users = () => {
   const btn = document.getElementById('generalData');
   const container = document.getElementById('nameList');
 
-  const usersJSONS = '../data/cohorts/lim-2018-03-pre-core-pw/users.json';
-  fetch(usersJSONS)
+  fetch('../data/cohorts/lim-2018-03-pre-core-pw/users.json')
     .then(response => response.json())
     .then(info => {
       renderUsers(info);
@@ -46,6 +46,36 @@ users = () => {
     });
   };
 };
+
+/* Aquí van los stats*/
+stats = () => {
+
+  fetch('../data/cohorts/lim-2018-03-pre-core-pw/progress.json')
+    .then(response => response.json())
+    .then(info => {
+      progress(info);
+    });
+  const progress = info => {
+    console.log(info);
+  };
+};
+
+/* Aquí van los cursos*/
+courses = () =>{
+  const cohortCourses = document.getElementById('generalCourses');
+
+  fetch('../data/cohorts.json')
+  .then(response => response.json())
+  .then(info =>{
+    courses(info);
+  });
+  const courses = info =>{
+    cohortCourses.addEventListener('click', () => {
+
+    })
+  }
+}
+
 
 /* funcionalidad users*/
 /*usersProgressCourses = () => {
