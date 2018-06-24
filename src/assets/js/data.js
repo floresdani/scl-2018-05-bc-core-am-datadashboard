@@ -24,7 +24,7 @@ window.computeUsersStats = (users, progress, courses) => {
 
     if (progress[progreso.id].intro) { // obtener datos de cada id dentro de intro
       progreso.stats.percent = progress[progreso.id].intro.percent;
-      let units = progress[u.id].intro.units; // variable que con el contenido de units
+      let units = progress[progreso.id].intro.units; // variable que con el contenido de units
       let exercises = { total: 0,
         completed: 0, 
         percent: 0 };
