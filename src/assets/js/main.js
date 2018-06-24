@@ -2,11 +2,11 @@ window.onload = () => {
   resultsGeneral();
   infoGeneral();
   users();
-  /*searchStudent();*/
+  /* searchStudent();*/
   progress();
 };
 
-/*funcionalidad boton select */
+/* funcionalidad boton select */
 function resultsGeneral() {
   const btnDash = document.getElementById('dataDash');
   btnDash.addEventListener('click', () => {
@@ -15,7 +15,7 @@ function resultsGeneral() {
   });
 }
 
-/*funcionalidad boton continuar*/
+/* funcionalidad boton continuar*/
 function infoGeneral() {
   const generalInfo = document.getElementById('generalData');
   generalInfo.addEventListener('click', () => {
@@ -24,7 +24,7 @@ function infoGeneral() {
   });
 }
 
-/*Aqui va el listados de  nombres */
+/* Aqui va el listados de  nombres */
 function users() {
 
   const btn = document.getElementById('generalData');
@@ -46,7 +46,7 @@ function users() {
   };
 }
 
-/*Aquí va el listado de el progreso*/
+/* Aquí va el listado de el progreso*/
 function progress() {
   fetch('../data/cohorts/lim-2018-03-pre-core-pw/progress.json')
     .then((datas) => {
@@ -64,9 +64,9 @@ function progress() {
 };
 
 
-/*Aquí va la funcionalidad de buscar por alumna */
+/* Aquí va la funcionalidad de buscar por alumna */
 
-/*function searchStudent() {
+/* function searchStudent() {
   let user = [];
 
   const input = document.getElementById('studentSearch');
