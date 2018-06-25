@@ -61,17 +61,22 @@ stats = () => {
 };
 
 /* Aquí van los cursos*/
-courses = () =>{
+courses = () => {
   const cohortCourses = document.getElementById('generalCourses');
 
   fetch('../data/cohorts.json')
-  .then(response => response.json())
-  .then(info =>{
-    courses(info);
-  });
-  const courses = info =>{
+    .then(response => response.json())
+    .then(info => {
+      courses(info);
+    });
+  const courses = info => {
     cohortCourses.addEventListener('click', () => {
-
+      let courses = ' ';
+      for (x in info) {
+        if (id === 'lim-2017-09-bc-core-am') {
+          courses += courses;
+        }
+      }
     })
   }
 }
