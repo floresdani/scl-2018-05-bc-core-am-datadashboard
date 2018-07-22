@@ -47,22 +47,22 @@ window.computeUsersStats = (users, progress, courses) => {
               //Math.round para redondear el resultado.
               //El math.round tb sirve para que no obtener decimales.
               //Sacar el % fuera del for para evitar recalcular.
-              lecturesPercent = Math.round((lecturesCompleted*100/lectures));
+              lecturesPercent = Math.round((lecturesCompleted * 100 / lectures));
 
-              if(part.type === 'quiz'){
+              if (part.type === 'quiz') {
                 quizzes++;
-              } if (part.type === 'quiz' && part.completed === 1){
+              } if (part.type === 'quiz' && part.completed === 1) {
                 quizzesCompleted++;
-              } if (part.length == 0){
+              } if (part.length == 0) {
                 quizzes = 0;
                 percentGral = 0;
                 exercises = 0;
                 lectures = 0;
-              } if (part.type === 'practice'){
+              } if (part.type === 'practice') {
                 excercises++;
-              } if(part.type === 'practice' && part.completed === 1){
+              } if (part.type === 'practice' && part.completed === 1) {
                 exercisesCompleted++;
-              } 
+              }
             }
           }
         }
