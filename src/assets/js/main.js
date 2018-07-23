@@ -2,8 +2,10 @@ window.onload = () => {
   resultsGeneral();
   infoGeneral();
   users();
-  stats();
+  /* searchStudent();*/
+  progress();
 };
+
 /* funcionalidad boton select */
 function resultsGeneral() {
   const btnDash = document.getElementById('dataDash');
@@ -59,23 +61,5 @@ function progress() {
     .catch((error) => {
       console.error('Ha ocurrido un error: ' + error);
     });
-}
+};
 
-//se declara la funcion para darle funcionalidad al boton toggler y que cambie al darle click
-function onToggleSort() {
-  const direction = toggleSort.innerText;
-  if (direction == "ASC") {
-    toggleSort.innerText = "DESC";
-  } else {
-    toggleSort.innerText = "ASC";
-  }
-  //llamamos a la funcion de ordenamiento para que que ordene los usuarios
-  const sortedUsers = window.sortUsers(usersStats, "name", direction);
-  //no se hace el getElementById por que en JS todo lo declarado en el html con un id queda como variable global :O
-  studentContainer.innerHTML = "";
-  for (let student of sortedUsers) {
-    studentContainer.innerHTML += `
-    <p>${student.name}</p>
-  `;
-  }
-}

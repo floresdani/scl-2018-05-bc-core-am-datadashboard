@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Data Dashboard</title>
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+  <!--El Sidebar-->
+  <div class="col-lg-3 navbar-light">
+    <nav class="navbar navbar-expand-lg flex-lg-column text-center">
+      <!--El logo grande de Laboratoria-->
+      <a class="navbar-brand py-3">
+        <img src="assets/img/logo.png" id="logo" width="100%" alt="logolab">
+      </a>
+      <!--Menú colapsado en pantallas pequeñas-->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <!--Menú-->
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav flex-lg-column">
+          <a class="nav-item nav-link lead py-3">Valentina Smith</a>
+          <a class="nav-item nav-link lead">Admin</a>
+          <a class="nav-item nav-link lead" id="dataDash">Dashboard</a>
+          <a class="nav-item nav-link lead">Configuración</a>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <!--Primera página HTML con la primera búsqueda-->
+  <div class="col-lg-9" id="search">
+    <h3 class="heavy bg-warning text-start p-3">Data Dashboard</h3>
+    <!--Menú países-->
+    <select class="menu">
+      <option value="Sede">Seleccione la sede</option>
+      <option value="Brasil" disabled>Brasil</option>
+      <option value="Chile" disabled>Chile</option>
+      <option value="Mexico" disabled>México</option>
+      <option value="Peru">Perú</option>
+    </select>
+    <!--Menú cohorts-->
+    <select class="menu">
+      <option value="example">Elegir cohort</option>
+      <option value="cohort1">lim-2018-03-pre-core-pw</option>
+    </select>
+    <!--Botón de select que muestra la data general-->
+    <button id="generalData">Continuar</button>
+  </div>
+  <!--Aquí va el titulo Data dashboard que muestra los nombres e ID de alumnas-->
+  <div class="col-lg-9" id="generalResults">
+    <h3 class="heavy bg-warning text-start p-3">Data Dashboard</h3>
+    <!--Menú alumnas-->
+    <input type="text" id="studentSearch" onkeyup="searchStudent()" placeholder="Search for student.." title="Alumna">
+
+    <!--Menú orden-->
+    <select class="menu">
+      <option value="example">Elegir orden</option>
+      <option value="upward">Ascendente</option>
+      <option value="downward">Descendente</option>
+    </select>
+    <!--Botón cursos generales-->
+    <button id="gerenalCourses">Cursos</button>
+    <!--Cohort-->
+    <h4 class="pt-5 pl-4 heavy">Lim-2018-03-pre-core-pw</h4>
+    <!--Aquí va contenedor de la data seleccionada-->
+    <div class="container-fluid">
+      <div class="row">
+        <ul id="nameList"></ul>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script src="assets/js/bootstrap.min.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/data.js"></script>
+</body>
+
+</html>
