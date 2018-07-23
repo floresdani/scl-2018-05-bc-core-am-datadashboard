@@ -1,30 +1,6 @@
 window.onload = () => {
-  resultsGeneral();
-  infoGeneral();
-  /*usersProgressCourses();*/
   users();
   stats();
-  /* searchStudent(); */
-  /* progress(); */
-};
-
-/* funcionalidad boton select */
-resultsGeneral = () => {
-  const btnDash = document.getElementById('dataDash');
-  btnDash.addEventListener('click', () => {
-    document.getElementById('search').style.display = 'block';
-    document.getElementById('generalResults').style.display = 'none';
-  });
-};
-
-/* funcionalidad boton continuar*/
-infoGeneral = () => {
-  const generalInfo = document.getElementById('generalData');
-
-  generalInfo.addEventListener('click', () => {
-    document.getElementById('search').style.display = 'none';
-    document.getElementById('generalResults').style.display = 'block';
-  });
 };
 
 /* Aqui va el listados de  nombres */
@@ -39,8 +15,8 @@ users = () => {
     });
   const renderUsers = info => {
     btn.addEventListener('click', () => {
-      const render = info.forEach(element => {
-        return container.innerHTML += `<ul><b>NOMBRE:</b> ${element.name.toUpperCase()}<br><b>ID:</b> ${element.id}</ul>`;
+      const render = info.forEach(student => {
+        return container.innerHTML += `<ul><b>NOMBRE:</b> ${student.name.toUpperCase()}<br><b>ID:</b> ${student.id}</ul>`;
       });
       return render;
     });
@@ -60,35 +36,14 @@ stats = () => {
   };
 };
 
-/* Aquí van los cursos*/
-courses = () => {
-  const cohortCourses = document.getElementById('generalCourses');
-
-  fetch('../data/cohorts.json')
-    .then(response => response.json())
-    .then(info => {
-      courses(info);
-    });
-  const courses = info => {
-    cohortCourses.addEventListener('click', () => {
-      let courses = ' ';
-      for (x in info) {
-        if (id === 'lim-2017-09-bc-core-am') {
-          courses += courses;
-        };
-      };
-    });
-  };
-};
-
-// Función para buscar alumna por nombre
-function searchStudent() {
-  const search = searchStudent.value;
+/* Función para buscar alumna por nombre */
+searchStudent = () => {
+  const search = studentSearch.value;
   const filteredUsers = window.filterUsers(usersStats, search);
   nameList.innerHTML = '';
-  filteredUsers.forEach(element => {
+  filteredUsers.forEach(student => {
     nameList.innerHTML += `
-      <p>${element.name}</p>
+      <p>${student.name.toUpperCase()}</p>
     `;
   });
 }

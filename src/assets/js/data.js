@@ -130,7 +130,7 @@ window.sortUsers = (users, orderBy, orderDirection) => {
       }
     });
   }
-}
+};
 
 window.filterUsers = (users, search) => {
   if (search) {
