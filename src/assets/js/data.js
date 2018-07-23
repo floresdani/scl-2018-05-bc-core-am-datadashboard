@@ -13,13 +13,13 @@ window.computeUsersStats = (users, progress, courses) => {
     // Asignar valores a los objetos reads
     progreso.stats.reads.total = reads.total;
     progreso.stats.reads.completed = reads.completed;
-    progreso.stats.reads.percent = parseInt((reads.completed / reads.total) * 100);
+    progreso.stats.reads.percent = Math.round((reads.completed / reads.total) * 100);
     // Asignar valores a los objetos quizzes
     progreso.stats.quizzes.total = quizzes.total;
     progreso.stats.quizzes.completed = quizzes.completed;
     progreso.stats.quizzes.percent = parseInt((quizzes.completed / quizzes.total) * 100);
     progreso.stats.quizzes.scoreSum = quizzes.scoreSum;
-    progreso.stats.quizzes.scoreAvg = parseInt(quizzes.scoreSum / quizzes.scoreUnit) // sacará promedio de score
+    progreso.stats.quizzes.scoreAvg = Math.round(quizzes.scoreSum / quizzes.scoreUnit) // sacará promedio de score
 
 
     if (progress[progreso.id].intro) { // obtener datos de cada id dentro de intro
