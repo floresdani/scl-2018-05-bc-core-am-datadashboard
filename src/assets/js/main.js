@@ -75,8 +75,20 @@ courses = () => {
       for (x in info) {
         if (id === 'lim-2017-09-bc-core-am') {
           courses += courses;
-        }
-      }
-    })
-  }
+        };
+      };
+    });
+  };
+};
+
+// Función para buscar alumna por nombre
+function searchStudent() {
+  const search = searchStudent.value;
+  const filteredUsers = window.filterUsers(usersStats, search);
+  nameList.innerHTML = '';
+  filteredUsers.forEach(element => {
+    nameList.innerHTML += `
+      <p>${element.name}</p>
+    `;
+  });
 }

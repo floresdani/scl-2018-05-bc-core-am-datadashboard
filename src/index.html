@@ -13,7 +13,7 @@
 
 <body>
 
- <div class="row">
+  <div class="row">
     <!--El Sidebar-->
     <div class="col-lg-3 navbar-light p-0">
       <nav class="navbar navbar-expand-lg flex-lg-column text-center p-0">
@@ -65,8 +65,8 @@
       <!--Menú orden-->
       <select class="menu">
         <option value="example">Elegir orden</option>
-        <option value="upward">Ascendente</option>
-        <option value="downward">Descendente</option>
+        <option value="upward" onclick="onToggleSort()">Ascendente</option>
+        <option value="downward" onclick="onToggleSort()">Descendente</option>
       </select>
       <!--Botón cursos generales-->
       <button id="gerenalCourses">Cursos</button>
@@ -74,9 +74,7 @@
       <h4 class="pt-5 pl-4 heavy">Lim-2018-03-pre-core-pw</h4>
       <!--Aquí va contenedor de la data seleccionada-->
       <div class="container-fluid">
-        <div class="row">
-          <ul class="pl-0" id="nameList"></ul>
-        </div>
+        <ul class="pl-0" id="nameList"></ul>
       </div>
     </div>
   </div>
