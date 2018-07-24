@@ -3,32 +3,10 @@ let progress = null;
 let cohorts = null; // null == false => true
 let usersStats = null;
 
-window.onload = () => {
-  resultsGeneral();
-  infoGeneral();
-  usersList();
-  /* searchStudent();*/
-  progressUsers();
-};
-
-/* funcionalidad boton select */
-function resultsGeneral() {
-  const btnDash = document.getElementById('dataDash');
-  btnDash.addEventListener('click', () => {
-    document.getElementById('search').style.display = 'block';
-    document.getElementById('generalResults').style.display = 'none';
-  });
-}
-
-/* funcionalidad boton continuar*/
-function infoGeneral() {
-  const generalInfo = document.getElementById('generalData');
-  generalInfo.addEventListener('click', () => {
-    document.getElementById('search').style.display = 'none';
-    document.getElementById('generalResults').style.display = 'block';
-  });
-}
-
+/* window.onload = () => {
+  users();
+  stats();
+};*/
 /* Aqui va el listados de  nombres */
 function usersList() {
 
@@ -50,8 +28,8 @@ function usersList() {
 
   const renderUsers = info => {
     btn.addEventListener('click', () => {
-      const render = info.forEach(element => {
-        return container.innerHTML += `<div><td>${element.name.toUpperCase()}</td></div>`;
+      const render = info.forEach(student => {
+        return container.innerHTML += `<ul><b>NOMBRE:</b> ${student.name.toUpperCase()}<br><b>ID:</b> ${student.id}</ul>`;
       });
       return render;
     });
@@ -73,15 +51,19 @@ function progressUsers() {
     .catch((error) => {
       console.error('Ha ocurrido un error: ' + error);
     });
+  const progress = info => {
+    console.log(info);
+  };
 };
 
-function areWeFinishedYet() { // ¿hemos terminado?
-  // se llama desde todas las promesas para que tome los tome en cuenta sin importar cual de ellos se ejecute primero
-  // vemos si users progress y cohorts ya tienen datos en su interior sino no se ejecuta
-  if (users && progress && cohorts) {
-    const cohort = cohorts.find(item => item.id === 'lim-2018-03-pre-core-pw'); // busca el cohort que tiene ese id ya que este es el unico cohort que esta en los json
-    const courses = Object.keys(cohort.coursesIndex);
-    // guardamos el resultado de llamar a la funcion en una variable global    
-    usersStats = window.computeUsersStats(users, progress, courses);// recibe users, progress y el listado de los cursos del cohort
-  }
+/* Función para buscar alumna por nombre */
+searchStudent = () => {
+  const search = studentSearch.value;
+  const filteredUsers = window.filterUsers(usersStats, search);
+  nameList.innerHTML = '';
+  filteredUsers.forEach(student => {
+    nameList.innerHTML += `
+      <p>${student.name.toUpperCase()}</p>
+    `;
+  });
 }
